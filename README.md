@@ -26,7 +26,7 @@ Requires the .NET 8 SDK:
 
 ```bash
 dotnet restore
-dotnet run -- --capital 100 --min-profit 0.01
+dotnet run -- --capital 100 --min-profit 2.00
 ```
 
 Useful settings:

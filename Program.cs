@@ -11,7 +11,9 @@ var configuration = new ConfigurationBuilder()
     .Build();
 
 var capital = GetDouble(args, "--capital", configuration["Scanner:CapitalUsd"], 100d);
-var minimumProfit = GetDouble(args, "--min-profit", configuration["Scanner:MinimumNetProfitUsd"], 0d);
+// Only display opportunities that leave at least $2.00 net profit by default.
+// This is after both trading fees and the configured withdrawal estimate.
+var minimumProfit = GetDouble(args, "--min-profit", configuration["Scanner:MinimumNetProfitUsd"], 2.00);
 var topResults = GetInt(configuration["Scanner:TopResults"], 20);
 var timeoutSeconds = GetInt(configuration["Scanner:RequestTimeoutSeconds"], 10);
 
